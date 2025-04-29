@@ -1,20 +1,24 @@
-package produtosEcompra;
+package pooLoja;
 
-// Representa um cliente da loja
 public class Cliente {
+	
+	private String nome;
+	private double saldo;
 
-    private double saldo;
-
-    public Cliente(double saldo) {
-
-        this.saldo = saldo;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void debitar(double valor) {
-        this.saldo -= valor;
-    }
+	public Cliente(String nome, double saldo) {
+		this.nome = nome;
+		this.saldo = saldo;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public void Compra (double valor) {
+		this.saldo -= valor;
+	}
 }
