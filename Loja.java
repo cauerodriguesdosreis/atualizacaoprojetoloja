@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Loja {
 
 	private Cliente cliente;
+	private Loja loja;
 	private List<Produto> produtos = new ArrayList<>();
 	private Scanner sc = new Scanner(System.in);
 	private char ComprarNovamente;
@@ -89,6 +90,9 @@ public class Loja {
 				realizarCompra(produtos.get(opcao - 1));
 			} else if (opcao == produtos.size() + 1) {
 				System.out.println("Obrigado por comprar conosco, " + cliente.getNome() + "!");
+				comprando = false;
+				MaisCompras = false;
+				return;
 			} else {
 				System.out.println("Opção inválida. Tente novamente.");
 			}
@@ -124,7 +128,7 @@ public class Loja {
 		System.out.println("|");
 		
 		while (MaisCompras) {
-			System.out.println("Deseja comprar mais alguma coisa?");
+			System.out.println("Deseja comprar mais alguma coisa? (s/n)");
 			ComprarNovamente = sc.next().toLowerCase().charAt(0);
 			
 			if (ComprarNovamente == 's') {
